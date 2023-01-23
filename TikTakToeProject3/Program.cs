@@ -6,7 +6,13 @@ namespace TikTakToeProject3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            char[] a = { 'x', 'o', 'x' };
+            char[] b = { 'x', 'o', 'x' };
+            char[] c = { 'x', 'o', 'x' };
+
+            Array[] board = {a, b, c};
+
+
         }
     }
 }
