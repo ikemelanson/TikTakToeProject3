@@ -6,7 +6,7 @@ namespace TikTakToeProject3
 {
     class Supporting
     {
-        public void printBoard(char[,] board)
+        public void printBoard(char[] board)
         {
             for ( int outer = 0; outer < board.GetLength(0); outer++)
             {
@@ -18,7 +18,7 @@ namespace TikTakToeProject3
             }
         }
 
-        public bool checkWin(char[,] board)
+        public bool checkWin(char[] board)
         {
 
 
