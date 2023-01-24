@@ -25,8 +25,8 @@ namespace TikTakToeProject3
             int turnCheck = 0;
             int position = 0;
 
-            Console.WriteLine("Player 1 you are X's and Player 2 you are O's.");
-            Console.WriteLine("Player 1 starts...");
+            Console.WriteLine("\nPlayer 1 you are X's and Player 2 you are O's.");
+            Console.WriteLine("Player 1 starts...\n");
 
             do
             {
@@ -62,17 +62,21 @@ namespace TikTakToeProject3
                     turnCheck++;
                 }
 
-            } while (game.checkWin(gameBoard) == false); //Checks if there is a winner
+                if (game.checkWin(gameBoard) == false && turnCheck == 9) //Tie check to break out of loop
+                {
+                    break;
+                }
 
-            turnCheck--; //Remove last turn to check who is the winner
+            } while (game.checkWin(gameBoard) == false); //Checks if there is a winner
             
-            if (turnCheck == 9) //Check if there is a tie 
+            if (turnCheck == 9) //Check if there is a tie and display message
             {
-                Console.WriteLine("\nSorry it is a tie!");
+                Console.WriteLine("\nSorry it was a tie!");
                 game.printBoard(gameBoard);
             }
             else //Display winning board and the winner
             {
+                turnCheck--; //Remove last turn to check who is the winner
                 Console.WriteLine("Game Over");
                 game.printBoard(gameBoard);
 
