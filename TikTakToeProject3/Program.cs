@@ -30,7 +30,7 @@ namespace TikTakToeProject3
                 {
                     if (turnCheck % 2 == 0) //Check for player's turn
                     {
-                        game.printBoard();
+                        game.printBoard(gameBoard);
                         Console.Write("\nPlayer1, choose a number to correspond to the space (0-8) ");
                         position = Convert.ToInt32(Console.ReadLine());
                         gameBoard[position] = player1;
@@ -38,7 +38,7 @@ namespace TikTakToeProject3
                     }
                     else
                     {
-                        game.printBoard()
+                        game.printBoard(gameBoard);
                         Console.Write("\nPlayer2, choose a number to correspond to the space (0-8) ");
                         position = Convert.ToInt32(Console.ReadLine());
                         gameBoard[position] = player2;
@@ -47,11 +47,11 @@ namespace TikTakToeProject3
                 } while ((gameBoard[position] != 'X') || (gameBoard[position] != 'O')); //Check if user inputs a number where there is already a symbol
                 
 
-                game.printBoard(); // Print resulting board
+                game.printBoard(gameBoard); // Print resulting board
             }
-            while (game.checkWin() == false);
+            while (game.checkWin(gameBoard) == false);
 
-            game.checkWin();
+            game.checkWin(gameBoard);
 
 
             /*
