@@ -12,17 +12,47 @@ namespace TikTakToeProject3
             // Welcome the user to the game
             Console.WriteLine("Hello, Welcome to Gorup 1's Tic Tac Toe Game!");
 
-            // Create a game board array to store the players’ choices
+            // Create a game, board array and player variables
+            Supporting game = new Supporting();
+            char[] gameBoard = new char[9];
+            char player1 = 'X';
+            char player2 = 'O';
+            int turnCheck = 0;
+            int position = 0;
 
-            char[,] gameBoard = new char[3,3];
+            Console.WriteLine("Player 1 you are X's and Player 2 you are O's.");
+            Console.WriteLine("Player 1 starts...");
 
-            char x = gameBoard[0,0] = 'A';
-
-            do
+            do // Start and Play the game
             {
-                Supporting.printBoard()
+                
+                do
+                {
+                    if (turnCheck % 2 == 0) //Check for player's turn
+                    {
+                        game.printBoard();
+                        Console.Write("\nPlayer1, choose a number to correspond to the space (0-8) ");
+                        position = Convert.ToInt32(Console.ReadLine());
+                        gameBoard[position] = player1;
+                        turnCheck++;
+                    }
+                    else
+                    {
+                        game.printBoard()
+                        Console.Write("\nPlayer2, choose a number to correspond to the space (0-8) ");
+                        position = Convert.ToInt32(Console.ReadLine());
+                        gameBoard[position] = player2;
+                        turnCheck++;
+                    }
+                } while ((gameBoard[position] != 'X') || (gameBoard[position] != 'O')); //Check if user inputs a number where there is already a symbol
+                
+
+                game.printBoard(); // Print resulting board
             }
-            while (Supporting.checkWin() == false);
+            while (game.checkWin() == false);
+
+            game.checkWin();
+
 
             /*
             • Ask each player in turn for their choice and update the game board array
