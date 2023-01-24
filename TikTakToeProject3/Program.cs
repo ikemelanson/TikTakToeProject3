@@ -33,15 +33,30 @@ namespace TikTakToeProject3
                     {
                         game.printBoard(gameBoard);
                         Console.Write("\nPlayer 1, choose a number to correspond to the space (0-8) ");
+
                         position = Convert.ToInt32(Console.ReadLine());
+                        while ((gameBoard[position] == 'X') || (gameBoard[position] == 'O'))
+                        {
+                            Console.Write("\nPlayer 1, enter a number that has not already been used ");
+                            position = Convert.ToInt32(Console.ReadLine());
+
+                        }
                         gameBoard[position] = player1;
                         turnCheck++;
+
+                        
                     }
                     else
                     {
                         game.printBoard(gameBoard);
                         Console.Write("\nPlayer 2, choose a number to correspond to the space (0-8) ");
                         position = Convert.ToInt32(Console.ReadLine());
+                        while ((gameBoard[position] == 'X') || (gameBoard[position] == 'O'))
+                        {
+                            Console.Write("\nPlayer 2, enter a number that has not already been used ");
+                            position = Convert.ToInt32(Console.ReadLine());
+
+                        }
                         gameBoard[position] = player2;
                         turnCheck++;
                     }
