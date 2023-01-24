@@ -14,7 +14,8 @@ namespace TikTakToeProject3
 
             // Create a game, board array and player variables
             Supporting game = new Supporting();
-            char[] gameBoard = new char[9];
+            // char[] gameBoard = new char[9];
+            char[] gameBoard = {'0', '1', '2', '3', '4', '5', '6', '7', '8'};
             char player1 = 'X';
             char player2 = 'O';
             int turnCheck = 0;
