@@ -21,9 +21,27 @@ namespace TikTakToeProject3
 
         public bool checkWin(char[] board)
         {
+            bool win = false;
 
+            //Check for matching rows
+            if ((board[0] == board[1] && board[0] == board[2]) || (board[3] == board[4] && board[3] == board[5]) || (board[6] == board[7] && board[6] == board[8]))
+            {
+                win = true;
+            }
 
-            return true;
+            //Check for matching columns
+            if ((board[0] == board[3] && board[0] == board[6]) || (board[1] == board[4] && board[1] == board[7]) || (board[2] == board[5] && board[2] == board[8]))
+            {
+                win = true;
+            }
+
+            //Check for matching diagnols
+            if ((board[0] == board[4] && board[0] == board[8]) || (board[2] == board[4] && board[2] == board[6]))
+            {
+                win = true;
+            }
+
+            return win;
         }
     }
 }
