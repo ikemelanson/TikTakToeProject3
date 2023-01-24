@@ -57,18 +57,18 @@ namespace TikTakToeProject3
 
             } while (game.checkWin(gameBoard) == false); //Checks if there is a winner
 
-            //Display winning board and the winner
-            Console.WriteLine("Game Over");
-            game.printBoard(gameBoard);
-            Console.WriteLine("Player " + ((turnCheck % 2) + 1) + " is the winner!");
-
-            /*
-            • Ask each player in turn for their choice and update the game board array
-            • Print the board by calling the method in the supporting class
-            • Check for a winner by calling the method in the supporting class, and notify the players
-              when a win has occurred and which player won the game
-            */
-
+            
+            if (turnCheck == 9) //Check if there is a tie 
+            {
+                Console.WriteLine("\nSorry it is a tie!");
+                game.printBoard(gameBoard);
+            }
+            else //Display winning board and the winner
+            {
+                Console.WriteLine("Game Over");
+                game.printBoard(gameBoard);
+                Console.WriteLine("Player " + ((turnCheck % 2) + 1) + " is the winner!");
+            }
         }
     }
 }
