@@ -10,7 +10,7 @@ namespace TikTakToeProject3
 
 
             // Welcome the user to the game
-            Console.WriteLine("Hello, Welcome to Gorup 1's Tic Tac Toe Game!");
+            Console.WriteLine("Hello, Welcome to Group 1's Tic Tac Toe Game!");
 
             // Create a game, board array and player variables
             Supporting game = new Supporting();
@@ -32,7 +32,7 @@ namespace TikTakToeProject3
                     if (turnCheck % 2 == 0) //Check for player's turn
                     {
                         game.printBoard(gameBoard);
-                        Console.Write("\nPlayer1, choose a number to correspond to the space (0-8) ");
+                        Console.Write("\nPlayer 1, choose a number to correspond to the space (0-8) ");
                         position = Convert.ToInt32(Console.ReadLine());
                         gameBoard[position] = player1;
                         turnCheck++;
@@ -40,7 +40,7 @@ namespace TikTakToeProject3
                     else
                     {
                         game.printBoard(gameBoard);
-                        Console.Write("\nPlayer2, choose a number to correspond to the space (0-8) ");
+                        Console.Write("\nPlayer 2, choose a number to correspond to the space (0-8) ");
                         position = Convert.ToInt32(Console.ReadLine());
                         gameBoard[position] = player2;
                         turnCheck++;
