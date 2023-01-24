@@ -8,14 +8,13 @@ namespace TikTakToeProject3
     {
         public void printBoard(char[] board)
         {
-            for ( int outer = 0; outer < board.GetLength(0); outer++)
-            {
-                for (int inner = 0; inner < board.GetLength(1); inner++)
-                {
-                    Console.Write(inner + "\t|\t");
-                }
-                Console.WriteLine();
-            }
+            Console.WriteLine("   |   |   ");
+            Console.WriteLine(" {0} | {1} | {2} ", board[0], board[1], board[2]);
+            Console.WriteLine("   |   |   ");
+            Console.WriteLine(" {0} | {1} | {2} ", board[3], board[4], board[5]);
+            Console.WriteLine("   |   |   ");
+            Console.WriteLine(" {0} | {1} | {2} ", board[6], board[7], board[8]);
+            Console.WriteLine("   |   |   ");
         }
 
         public bool checkWin(char[] board)
