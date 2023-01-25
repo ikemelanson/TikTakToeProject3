@@ -8,6 +8,7 @@ namespace TikTakToeProject3
     {
         public void printBoard(char[] board)
         {
+            //print out each spot in the array and format it to look like a board
             Console.WriteLine("     |     |      ");
             Console.WriteLine("  {0}  |  {1}  |  {2}", board[0], board[1], board[2]);
             Console.WriteLine("_____|_____|_____ ");
